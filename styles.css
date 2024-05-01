@@ -196,3 +196,9 @@
   width: 100%;
   text-align: center;
 }
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
