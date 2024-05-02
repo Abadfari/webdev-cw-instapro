@@ -21,4 +21,4 @@ export function escapeHTML(text) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
-};
+}

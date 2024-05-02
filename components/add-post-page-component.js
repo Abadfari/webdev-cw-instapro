@@ -23,7 +23,9 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
 
     appEl.innerHTML = appHtml;
 
-    renderHeaderComponent({ element: document.querySelector(".header-container") });
+    renderHeaderComponent({
+      element: document.querySelector(".header-container"),
+    });
 
     renderUploadImageComponent({
       element: document.querySelector(".upload-image-container"),
@@ -35,13 +37,13 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
     document.getElementById("add-button").addEventListener("click", () => {
       const description = document.querySelector(".textarea").value;
       if (!imageUrl) {
-        alert("Загрузите картинку")
-        return
-      };
+        alert("Загрузите картинку");
+        return;
+      }
       if (!description) {
-        alert("Добавьте описание")
-        return
-      };
+        alert("Добавьте описание");
+        return;
+      }
       onAddPostClick({
         description: escapeHTML(description),
         imageUrl,

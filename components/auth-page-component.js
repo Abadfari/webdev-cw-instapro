@@ -1,4 +1,5 @@
 import { loginUser, registerUser } from "../api.js";
+import { escapeHTML } from "../helpers.js";
 import { renderHeaderComponent } from "./header-component.js";
 import { renderUploadImageComponent } from "./upload-image-component.js";
 
@@ -127,9 +128,9 @@ export function renderAuthPageComponent({ appEl, setUser }) {
         }
 
         registerUser({
-          login: login,
+          login: escapeHTML(login),
           password: password,
-          name: name,
+          name: escapeHTML(name),
           imageUrl,
         })
           .then((user) => {
